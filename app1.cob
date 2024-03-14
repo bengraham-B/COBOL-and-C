@@ -1,31 +1,19 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. DockerCLI.
+       PROGRAM-ID. Math.
+       ENVIRONMENT DIVISION.
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 ARGV.
-          05 ARG-COUNT PIC S9(4) COMP VALUE 0.
-          05 ARG-VALUE OCCURS 10 TIMES PIC X(50).
-       01 PARAMETER PIC X(50).
-       01 ARG-INDEX PIC S9(4) COMP VALUE 1.
-       
-       PROCEDURE DIVISION.
-          PERFORM VARYING ARG-INDEX FROM 1 BY 1
-             UNTIL ARG-INDEX > 10
-             ACCEPT ARGV(ARG-INDEX) FROM COMMAND-LINE
-             IF ARGV(ARG-INDEX) = SPACE OR ARGV(ARG-INDEX) = LOW-VALUES
-                MOVE ARG-COUNT TO ARG-INDEX
-                EXIT PERFORM
-             END-IF
-             ADD 1 TO ARG-COUNT
-          END-PERFORM
-       
-          PERFORM DISPLAY-PARAMETERS
-          STOP RUN.
 
-       DISPLAY-PARAMETERS.
-          DISPLAY "Number of Parameters: " ARG-COUNT
-          PERFORM VARYING ARG-INDEX FROM 1 BY 1
-             UNTIL ARG-INDEX > ARG-COUNT
-             DISPLAY "Parameter " ARG-INDEX ": " ARGV(ARG-INDEX)
-          END-PERFORM.
-       
+           01 num1 PIC 999.
+           01 num2 PIC 999.
+           01 ans PIC 999.
+
+       PROCEDURE DIVISION.
+           ACCEPT num1 FROM COMMAND-LINE.
+           ACCEPT num2 FROM COMMAND-LINE.
+           COMPUTE ans = FUNCTION NUMVAL(num1) + FUNCTION NUMVAL(num2).
+    
+           DISPLAY ans.
+
+
+       STOP RUN.

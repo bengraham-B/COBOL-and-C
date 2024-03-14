@@ -5,7 +5,7 @@ int main() {
     char response[256];
 
     // Open a pipe to execute the COBOL program
-    fp = popen("./app", "r");
+    fp = popen("./app 200 22 ", "r");
     if (fp == NULL) {
         printf("Error executing COBOL program.\n");
         return 1;
@@ -20,5 +20,11 @@ int main() {
     // Close the pipe
     pclose(fp);
 
+    func();
+
     return 0;
+}
+
+void func(){
+    printf("Function Baby");
 }
