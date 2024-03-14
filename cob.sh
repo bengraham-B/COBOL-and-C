@@ -1,2 +1,2 @@
-cobc -x app.cob
-./app
+cobc -x -o app app.cob
+./app GOOSE

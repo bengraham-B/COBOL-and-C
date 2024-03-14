@@ -6,10 +6,9 @@
            01 user-name PIC X(255).
        PROCEDURE DIVISION.
            DISPLAY "Hello COBOL".
-           
-           DISPLAY "Plsea Enter Your Name: " WITH NO ADVANCING.
-           ACCEPT user-name.
+          
+           ACCEPT  user-name FROM COMMAND-LINE.
 
-           DISPLAY user-name " IS COBOL No Jsu Awsome!".
+           DISPLAY user-name "IS COBOL No Just Awsome!".
 
-        STOP RUN.
+       STOP RUN.
