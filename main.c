@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+void func(){
+    printf("Function Baby");
+}
+
 int main() {
     FILE *fp;
     char response[256];
@@ -25,6 +29,4 @@ int main() {
     return 0;
 }
 
-void func(){
-    printf("Function Baby");
-}
+

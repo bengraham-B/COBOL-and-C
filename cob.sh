@@ -1,2 +1,2 @@
 cobc -x -o app app.cob
-./app 02 30
+./app 2 30
